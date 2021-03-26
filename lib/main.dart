@@ -5,8 +5,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  var questionIndex = 0;
+
   void answerQuestion() {
-    print('Answer chosen!');
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
   }
 
   @override
@@ -18,14 +21,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My First App'),
+          title: Text('Meu Primeiro Aplicativo'),
         ),
         body: Column(
           children: [
-            Text('The Question!'),
-            RaisedButton(child: Text('Answer 1'), onPressed: answerQuestion),
-            RaisedButton(child: Text('Answer 2'), onPressed: answerQuestion),
-            RaisedButton(child: Text('Answer 3'), onPressed: answerQuestion),
+            Text(questions[questionIndex]),
+            RaisedButton(child: Text('Resposta 1'), onPressed: answerQuestion),
+            RaisedButton(child: Text('Resposta 2'), onPressed: answerQuestion),
+            RaisedButton(child: Text('Resposta 3'), onPressed: answerQuestion),
           ],
         ),
       ),
